@@ -11,6 +11,3 @@
 
 /obj/item/organ/tail_feature/vox_marking
 	name = "vox marking"
-
-/obj/item/organ/tail_feature/taur_markings
-	name = "taur marking"

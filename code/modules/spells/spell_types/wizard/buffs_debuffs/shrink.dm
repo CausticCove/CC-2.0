@@ -55,9 +55,6 @@
 /obj/item/melee/touch_attack/sizespell/proc/grow_target(mob/living/target, mob/living/carbon/human/user)
 	if(!isliving(target))
 		return
-	if(HAS_TRAIT(target,TRAIT_MICRO || TRAIT_MACRO))
-		to_chat(user, "<span class='warning'>They're already afflicted by other magics!</span>")
-		return
 
 	if(user == target)
 		user.visible_message(span_notice("[user] rapidly changes in size!"), span_notice("I rapidly grow up!"))
@@ -86,8 +83,8 @@
 
 /datum/status_effect/buff/shrinked/on_remove()
 	var/mob/living/target = owner
-	target.transform = target.transform.Translate(0, -(0.25 * 8))
 	target.transform = target.transform.Scale(5, 5)
+	target.transform = target.transform.Translate(0, -(0.25 * 8))
 	target.update_transform()
 	target.pass_flags = 0
 	REMOVE_TRAIT(target, TRAIT_MICRO, MAGIC_TRAIT)
@@ -131,8 +128,8 @@
 
 /datum/status_effect/buff/growth/on_remove()
 	var/mob/living/target = owner
-	target.transform = target.transform.Translate(0, -(0.25 * 35))
 	target.transform = target.transform.Scale(0.5, 0.5)
+	target.transform = target.transform.Translate(0, -(0.25 * 35))
 	target.update_transform()
 	REMOVE_TRAIT(target, TRAIT_MACRO, MAGIC_TRAIT)
 	. = ..()
