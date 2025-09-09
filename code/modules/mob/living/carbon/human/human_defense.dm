@@ -25,20 +25,29 @@
 	if(def_zone == BODY_ZONE_TAUR)
 		def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/list/body_parts = list(skin_armor, head, wear_mask, wear_wrists, gloves, wear_neck, cloak, wear_armor, wear_shirt, shoes, wear_pants, backr, backl, belt, s_store, glasses, ears, wear_ring) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
-	for(var/bp in body_parts)
-		if(!bp)
-			continue
-		if(bp && istype(bp , /obj/item/clothing))
-			var/obj/item/clothing/C = bp
-			if(zone2covered(def_zone, C.body_parts_covered_dynamic))
-				if(C.max_integrity)
-					if(C.obj_integrity <= 0)
-						continue
-				var/val = C.armor.getRating(d_type)
-				if(val > 0)
-					if(val > protection)
-						protection = val
-						used = C
+	if(skin_armor)
+		var/obj/item/clothing/C = skin_armor
+		if(C.obj_integrity > 0)
+			var/val = C.armor.getRating(d_type)
+			if(val > 0)
+				if(val > protection)
+					protection = val
+			used = C
+	else
+		for(var/bp in body_parts)
+			if(!bp)
+				continue
+			if(bp && istype(bp , /obj/item/clothing))
+				var/obj/item/clothing/C = bp
+				if(zone2covered(def_zone, C.body_parts_covered_dynamic))
+					if(C.max_integrity)
+						if(C.obj_integrity <= 0)
+							continue
+					var/val = C.armor.getRating(d_type)
+					if(val > 0)
+						if(val > protection)
+							protection = val
+							used = C
 	if(used)
 		if(!blade_dulling)
 			blade_dulling = BCLASS_BLUNT
