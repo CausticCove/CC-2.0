@@ -26,6 +26,7 @@
 	if(!held_mob)
 		return
 	if (held_mob.loc == src || isnull(held_mob.loc))
+		held_mob.set_resting(FALSE,FALSE)
 		held_mob.transform = original_transform
 		held_mob.update_transform()
 		held_mob.forceMove(get_turf(src))
@@ -85,6 +86,7 @@
 
 /obj/item/micro/Exited(mob/held, atom/newLoc)
 	if(held == held_mob)
+		held_mob.set_resting(FALSE,FALSE)
 		held_mob.transform = original_transform
 		held_mob.update_transform()
 		held_mob = null
