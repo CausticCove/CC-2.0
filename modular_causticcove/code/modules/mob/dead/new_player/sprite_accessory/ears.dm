@@ -1,4 +1,4 @@
-/datum/sprite_accessory/ears/big/caustic/
+/datum/sprite_accessory/ears/big/caustic
 	icon = 'modular_causticcove/icons/mob/sprite_accessory/ears/ears_big.dmi'
 
 
