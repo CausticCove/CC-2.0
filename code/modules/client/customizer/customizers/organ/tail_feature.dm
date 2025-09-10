@@ -37,6 +37,7 @@
 		/datum/sprite_accessory/tail_feature/taur/altnagatailmaw,
 		/datum/sprite_accessory/tail_feature/taur/fatnaga,
 		/datum/sprite_accessory/tail_feature/taur/caustic/bunny,
+		/datum/sprite_accessory/tail_feature/taur/caustic/deerbelly,
 		)
 
 /datum/customizer/organ/tail_feature/vox_markings
@@ -69,6 +70,7 @@
 		/datum/sprite_accessory/tail_feature/taur/altnagatailmaw,
 		/datum/sprite_accessory/tail_feature/taur/fatnaga,
 		/datum/sprite_accessory/tail_feature/taur/caustic/bunny,
+		/datum/sprite_accessory/tail_feature/taur/caustic/deerbelly,
 	)
 
 /datum/customizer/organ/tail_feature/anthro
