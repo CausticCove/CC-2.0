@@ -33,6 +33,7 @@
 		/obj/item/bodypart/taur/altnaga,
 		/obj/item/bodypart/taur/altnagatailmaw,
 		/obj/item/bodypart/taur/fatnaga,
+		/obj/item/bodypart/taur/caustic/bunny,
 	)
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = TRUE

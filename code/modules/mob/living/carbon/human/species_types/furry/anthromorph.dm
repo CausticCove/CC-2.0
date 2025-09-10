@@ -43,6 +43,7 @@
 		/obj/item/bodypart/taur/altnaga,
 		/obj/item/bodypart/taur/altnagatailmaw,
 		/obj/item/bodypart/taur/fatnaga,
+		/obj/item/bodypart/taur/caustic/bunny,
 	)
 
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
